@@ -33,7 +33,7 @@
 #include "aw_log.h"
 #include "aw_calib.h"
 
-static bool is_single_cali = false; /*if mutli_dev cali false, single dev true*/
+static bool __maybe_unused is_single_cali = false; /*if mutli_dev cali false, single dev true*/
 
 static const char *cali_str[CALI_STR_MAX] = {"none", "start_cali", "cali_re",
 	"cali_f0", "store_re", "show_re", "show_r0", "show_cali_f0", "show_f0",
@@ -44,7 +44,7 @@ static char *ch_name[AW_DEV_CH_MAX] = {"pri_l", "pri_r", "sec_l", "sec_r"};
 static unsigned int g_cali_re_time = AW_CALI_RE_DEFAULT_TIMER;
 static unsigned int g_msic_wr_flag = CALI_STR_NONE;
 static unsigned int g_dev_select = AW_DEV_CH_PRI_L;
-static unsigned int g_cali_status = false;
+static unsigned int __maybe_unused g_cali_status = false;
 static struct miscdevice *g_misc_dev = NULL;
 static DEFINE_MUTEX(g_cali_lock);
 
